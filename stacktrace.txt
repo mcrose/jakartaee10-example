@@ -1,0 +1,163 @@
+PS C:\Users\roberto.gamarra\git\jakartaee10-examples\platform> mvn clean package
+[INFO] Scanning for projects...
+[INFO]
+[INFO] -----------------------< py.com.skytel:platform >-----------------------
+[INFO] Building platform 1.0.0-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ platform ---
+[INFO] Deleting C:\Users\roberto.gamarra\git\jakartaee10-examples\platform\target
+[INFO]
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-versions) @ platform ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ platform ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ platform ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to C:\Users\roberto.gamarra\git\jakartaee10-examples\platform\target\classes
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ platform ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\roberto.gamarra\git\jakartaee10-examples\platform\src\test\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ platform ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ platform ---
+[INFO] No tests to run.
+[INFO]
+[INFO] --- maven-war-plugin:3.3.2:war (default-war) @ platform ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [platform] in [C:\Users\roberto.gamarra\git\jakartaee10-examples\platform\target\platform]
+[INFO] Processing war project
+[INFO] Copying webapp resources [C:\Users\roberto.gamarra\git\jakartaee10-examples\platform\src\main\webapp]
+[INFO] Building war: C:\Users\roberto.gamarra\git\jakartaee10-examples\platform\target\platform.war
+[INFO]
+[INFO] --- wildfly-jar-maven-plugin:8.0.1.Final:package (default) @ platform ---
+[INFO] Provisioning server configuration based on the set of configured layers
+[INFO] Building server based on [[wildfly@maven(org.jboss.universe:community-universe)#27.0.0.Final inherit-packages=false inheritConfigs=false]] galleon feature-packs
+[INFO] Found boot artifact org.wildfly.core:wildfly-jar-boot:jar:19.0.0.Final:provided in org.wildfly:wildfly-ee-galleon-pack:27.0.0.Final
+[INFO] CLI executions are done in forked process
+[INFO] Executing CLI, Server configuration
+[INFO] CLI scripts execution done.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  25.895 s
+[INFO] Finished at: 2022-12-05T14:46:11-03:00
+[INFO] ------------------------------------------------------------------------
+PS C:\Users\roberto.gamarra\git\jakartaee10-examples\platform> mvn wildfly-jar:run
+[INFO] Scanning for projects...
+[INFO]
+[INFO] -----------------------< py.com.skytel:platform >-----------------------
+[INFO] Building platform 1.0.0-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO]
+[INFO] --- wildfly-jar-maven-plugin:8.0.1.Final:run (default-cli) @ platform ---
+14:46:23,206 INFO  [org.wildfly.jar] (main) WFLYJAR0007: Installed server and application in C:\Users\ROBERT~1.GAM\AppData\Local\Temp\wildfly-bootable-server15946991513685740781, took 1353ms
+14:46:24,128 INFO  [org.wildfly.jar] (main) WFLYJAR0008: Server options: [--read-only-server-config=standalone.xml]
+14:46:24,903 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.13.Final
+14:46:24,907 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final
+14:46:25,007 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 27.0.0.Final (WildFly Core 19.0.0.Final) starting
+14:46:28,318 INFO  [org.wildfly.extension.microprofile.config.smallrye] (ServerService Thread Pool -- 14) WFLYCONF0001: Activating MicroProfile Config Subsystem
+14:46:28,322 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 15) WFLYNAM0001: Activating Naming Subsystem
+14:46:28,330 INFO  [org.xnio] (ServerService Thread Pool -- 12) XNIO version 3.8.8.Final
+14:46:28,346 INFO  [org.xnio.nio] (ServerService Thread Pool -- 12) XNIO NIO Implementation Version 3.8.8.Final
+14:46:28,346 INFO  [org.jboss.as.naming] (MSC service thread 1-1) WFLYNAM0003: Starting Naming Service
+14:46:28,361 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0003: Undertow 2.3.0.Final starting
+14:46:28,422 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 12) WFLYIO001: Worker 'default' has auto-configured to 16 IO threads with 128 max task threads based on your 8 available processors
+14:46:28,462 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0012: Started server default-server.
+14:46:28,463 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) Queuing requests.
+14:46:28,464 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0018: Host default-host starting
+14:46:28,691 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+14:46:29,084 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 13) WFLYRS0016: RESTEasy version 6.2.1.Final
+14:46:29,118 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "platform.war" (runtime-name: "ROOT.war")
+14:46:31,057 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment ROOT.war
+14:46:31,880 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-8) HV000001: Hibernate Validator 8.0.0.Final
+14:46:32,191 INFO  [org.jboss.weld.Version] (MSC service thread 1-2) WELD-000900: 5.1.0 (Final)
+14:46:32,315 INFO  [org.jboss.weld.Bootstrap] (MSC service thread 1-5) WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+14:46:33,299 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 19) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class py.com.icarusdb.platform.ApplicationConfig
+14:46:33,846 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 19) WFLYUT0021: Registered web context: '/' for server 'default-server'
+14:46:33,848 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "platform.war" (runtime-name : "ROOT.war")
+14:46:33,876 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+14:46:33,877 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 27.0.0.Final (WildFly Core 19.0.0.Final) started in 9743ms - Started 137 of 142 services (20 services are lazy, passive or on-demand) - Server configuration file in use: standalone.xml
+14:46:43,941 INFO  [py.com.icarusdb.platform.resources.RestResource] (default task-1) hello! -> RestResource -> 2022-12-05T14:46:43.9385293
+14:46:46,171 INFO  [py.com.icarusdb.platform.resources.RestResource] (default task-1) hello! -> RestResource -> 2022-12-05T14:46:46.1700889
+14:46:47,776 INFO  [py.com.icarusdb.platform.resources.RestResource] (default task-1) hello! -> RestResource -> 2022-12-05T14:46:47.7761322
+14:46:51,611 INFO  [py.com.icarusdb.platform.resources.ModulesResource] (default task-1) Hello! from ModulesResource -> 2022-12-05T14:46:51.6105226
+14:46:52,417 INFO  [py.com.icarusdb.platform.resources.ModulesResource] (default task-1) Hello! from ModulesResource -> 2022-12-05T14:46:52.4173172
+14:46:53,079 INFO  [py.com.icarusdb.platform.resources.ModulesResource] (default task-1) Hello! from ModulesResource -> 2022-12-05T14:46:53.079189
+14:46:57,930 ERROR [org.jboss.resteasy.core.providerfactory.DefaultExceptionMapper] (default task-1) RESTEASY002375: Error processing request GET /modules/actives - py.com.icarusdb.platform.resources.ModulesResource.actives: java.lang.NullPointerException: Cannot invoke "Object.getClass()" because "beanInstance" is null
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.bean.builtin.ee.EEResourceProducerField.create(EEResourceProducerField.java:143)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.contexts.unbound.DependentContextImpl.get(DependentContextImpl.java:64)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.bean.ContextualInstanceStrategy$DefaultContextualInstanceStrategy.get(ContextualInstanceStrategy.java:100)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.bean.ContextualInstance.get(ContextualInstance.java:50)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.manager.BeanManagerImpl.getReference(BeanManagerImpl.java:680)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.manager.BeanManagerImpl.getInjectableReference(BeanManagerImpl.java:780)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.injection.FieldInjectionPoint.inject(FieldInjectionPoint.java:92)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.util.Beans.injectBoundFields(Beans.java:345)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.util.Beans.injectFieldsAndInitializers(Beans.java:356)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.injection.producer.ResourceInjector$1.proceed(ResourceInjector.java:69)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.injection.InjectionContextImpl.run(InjectionContextImpl.java:48)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.injection.producer.ResourceInjector.inject(ResourceInjector.java:71)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.injection.producer.BasicInjectionTarget.inject(BasicInjectionTarget.java:117)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.bean.ManagedBean.create(ManagedBean.java:161)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.contexts.AbstractContext.get(AbstractContext.java:96)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.bean.ContextualInstanceStrategy$DefaultContextualInstanceStrategy.get(ContextualInstanceStrategy.java:100)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.bean.ContextualInstanceStrategy$ApplicationScopedContextualInstanceStrategy.get(ContextualInstanceStrategy.java:140)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.bean.ContextualInstance.get(ContextualInstance.java:50)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.bean.proxy.ContextBeanInstance.getInstance(ContextBeanInstance.java:102)
+        at org.jboss.weld.core@5.1.0.Final//org.jboss.weld.bean.proxy.ProxyMethodHandler.getInstance(ProxyMethodHandler.java:131)
+        at deployment.ROOT.war//py.com.icarusdb.platform.repository.ModuloRepository$Proxy$_$$_WeldClientProxy.allActives(Unknown Source)
+        at deployment.ROOT.war//py.com.icarusdb.platform.resources.ModulesResource.actives(ModulesResource.java:58)
+        at deployment.ROOT.war//py.com.icarusdb.platform.resources.ModulesResource$Proxy$_$$_WeldClientProxy.actives(Unknown Source)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:170)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:130)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.ResourceMethodInvoker.internalInvokeOnTarget(ResourceMethodInvoker.java:660)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTargetAfterFilter(ResourceMethodInvoker.java:524)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.ResourceMethodInvoker.lambda$invokeOnTarget$2(ResourceMethodInvoker.java:474)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.interception.jaxrs.PreMatchContainerRequestContext.filter(PreMatchContainerRequestContext.java:364)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:476)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:434)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:408)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:69)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:492)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.SynchronousDispatcher.lambda$invoke$4(SynchronousDispatcher.java:261)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.SynchronousDispatcher.lambda$preprocess$0(SynchronousDispatcher.java:161)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.interception.jaxrs.PreMatchContainerRequestContext.filter(PreMatchContainerRequestContext.java:364)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.SynchronousDispatcher.preprocess(SynchronousDispatcher.java:164)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:247)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:249)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:60)
+        at org.jboss.resteasy.resteasy-core@6.2.1.Final//org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:55)
+        at jakarta.servlet.api@6.0.0//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+        at io.undertow.servlet@2.3.0.Final//io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+        at io.undertow.servlet@2.3.0.Final//io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+        at io.undertow.servlet@2.3.0.Final//io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+        at io.undertow.servlet@2.3.0.Final//io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+        at io.undertow.servlet@2.3.0.Final//io.undertow.servlet.handlers.SendErrorPageHandler.handleRequest(SendErrorPageHandler.java:52)
+        at io.undertow.core@2.3.0.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+        at io.undertow.servlet@2.3.0.Final//io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:275)
+        at io.undertow.servlet@2.3.0.Final//io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:134)
+        at io.undertow.servlet@2.3.0.Final//io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:131)
+        at io.undertow.servlet@2.3.0.Final//io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+        at io.undertow.servlet@2.3.0.Final//io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+        at org.wildfly.extension.undertow@27.0.0.Final//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1435)
+        at org.wildfly.extension.undertow@27.0.0.Final//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1435)
+        at io.undertow.servlet@2.3.0.Final//io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:255)
+        at io.undertow.servlet@2.3.0.Final//io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:100)
+        at io.undertow.core@2.3.0.Final//io.undertow.server.Connectors.executeRootHandler(Connectors.java:391)
+        at io.undertow.core@2.3.0.Final//io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:859)
+        at org.jboss.threads@2.4.0.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+        at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1990)
+        at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+        at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+        at org.jboss.xnio@3.8.8.Final//org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1282)
+        at java.base/java.lang.Thread.run(Thread.java:833)
+
