@@ -1,0 +1,41 @@
+<persistence version="3.1" xmlns="https://jakarta.ee/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemalocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd">
+
+    <persistence-unit name="JakartaEE10DS" transaction-type="JTA">
+
+        <!-- HIBERNATE -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <jta-data-source>java:app/jdbc/JakartaEE10ds</jta-data-source>
+
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+        <!-- To cache only the entities annotated with @Cacheable or @Cacheable(true) -->
+        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+
+        <!-- Activate the validation and throw an exception if no bean validation implementation is available -->
+        <validation-mode>CALLBACK</validation-mode>
+
+        <properties>
+
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres" />
+            <property name="jakarta.persistence.jdbc.user" value="postgres" />
+            <property name="jakarta.persistence.jdbc.password" value="postgres" />
+
+            <property name="jakarta.persistence.lock.timeout" value="100" />
+            <property name="jakarta.persistence.query.timeout" value="100" />
+
+            <property name="jakarta.persistence.schema-generation.database.action" value="create" />
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+            <property name="hibernate.generate_statistics" value="false" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="false" />
+            <property name="hibernate.service.allow_crawling" value="false" />
+            <property name="hibernate.session.events.log" value="true" />
+
+        </properties>
+
+    </persistence-unit>
+</persistence>
