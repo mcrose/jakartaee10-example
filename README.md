@@ -7,6 +7,3 @@ so to run the example you must
 - have postgresql running
 - run: mvn clean package
 - run: mvn wildfly-jar:run
-
-
-actually the example is not working and the stacktrace can be seen in stacktrace.txt

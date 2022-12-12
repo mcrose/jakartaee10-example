@@ -16,14 +16,12 @@ import jakarta.persistence.PersistenceContext;
 public class Resources {
 
     @Produces
-    @PersistenceContext(unitName = "JakartaEE10DS")
+    @PersistenceContext(unitName = "JakartaEE10ds")
     private EntityManager em;
 
     @Produces
     public Logger produceLog(InjectionPoint injectionPoint) {
-        //
-        Logger logger = Logger.getLogger(
-                                         injectionPoint.getMember().getDeclaringClass().getName());
+        Logger logger = Logger.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
         logger.setLevel(Level.INFO);
         return logger;
     }
