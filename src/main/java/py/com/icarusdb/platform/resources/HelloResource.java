@@ -22,7 +22,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 
 @Path("hello")
-public class RestResource {
+public class HelloResource {
 
     @Inject
     private Logger logger;

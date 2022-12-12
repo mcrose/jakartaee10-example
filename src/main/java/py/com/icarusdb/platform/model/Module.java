@@ -21,7 +21,7 @@ import jakarta.validation.constraints.NotNull;
 @NamedQuery(name = "Module.findAll",
             query = "select m from Module m order by m.id")
 @NamedQuery(name = "Module.findAllActives",
-            query = "select m from Module m where m.activo = :activo ")
+            query = "select m from Module m where m.active = :active ")
 public class Module implements Serializable {
 
     private static final long serialVersionUID = -3024834661766008702L;

@@ -1,6 +1,5 @@
 package py.com.icarusdb.platform.repository;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -23,17 +22,12 @@ public class ModuloRepository {
 
     @Transactional(value = TxType.REQUIRES_NEW)
     public List<Module> all() {
-        if (em == null) {
-            logger.severe("no entityManeger !!!!");
-            return Collections.emptyList();
-        }
-        return em.createNamedQuery("Modulo.findAll", Module.class).getResultList();
+        return em.createNamedQuery("Module.findAll", Module.class).getResultList();
     }
 
     @Transactional(value = TxType.REQUIRES_NEW)
     public List<Module> allActives() {
-        //
-        return em.createNamedQuery("Modulo.findAllActives", Module.class)
+        return em.createNamedQuery("Module.findAllActives", Module.class)
                  .setParameter("active", true)
                  .getResultList();
     }
